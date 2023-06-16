@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Groupie Tracker</title>
+    <link rel="icon" href="/static/img/logo.png">
+    <link rel="stylesheet" href="/static/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="container nav-container">
+                <input class="checkbox" type="checkbox" name="" id="" />
+                <div class="hamburger-lines">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>
+                <div class="Search">
+                    <datalist id="browsers">
+                        {{range .}}
+                        <option value="{{.Id}}" >{{.Name}} - Groupe/Artiste</option>
+                        <option value="{{.Id}}" >{{.Members}}</option>
+                        <option value="{{.Id}}" >{{.CreationDate}} - Date de création de {{.Name}}</option>
+                        <option value="{{.Id}}" >{{.FirstAlbum}} - Date du premier album de {{.Name}}</option>
+                        {{end}}
+                </datalist>
+                    <form method="Get" action="/artistpage/infos">
+                        <div class="wrap">
+                            <div class="search">
+                                <input list="browsers" autocomplete="off" name="id" type="text" class="searchTerm" placeholder="Que recherchez-vous ?">
+                                <button type="submit" class="searchButton">
+                                  <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="logo">
+                    <h1><a href="/home">GT & Co</a></h1>
+                </div>
+                <div class="menu-items">
+                    <li><a href="/home">Accueil</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <div class="filters">
+                        <form action="/filter" method="post">
+                            <div class="filterbymembers">
+                                <p>Filtrer par nombre de membres</p>
+                                <div class="radiobutton">
+                                    <input type="radio" id="choix1" name="memberfilter" value="1">
+                                    <label for="choix1">1</label>
+                                    <input type="radio" id="choix2" name="memberfilter" value="2">
+                                    <label for="choix2">2</label>
+                                    <input type="radio" id="choix3" name="memberfilter" value="3">
+                                    <label for="choix3">3</label>
+                                    <input type="radio" id="choix4" name="memberfilter" value="4">
+                                    <label for="choix4">4</label>
+                                    <input type="radio" id="choix5" name="memberfilter" value="5">
+                                    <label for="choix5">5</label>
+                                    <input type="radio" id="choix6" name="memberfilter" value="6">
+                                    <label for="choix6">6</label>
+                                    <input type="radio" id="choix7" name="memberfilter" value="7">
+                                    <label for="choix7">7</label>
+                                    <input type="radio" id="choix8" name="memberfilter" value="8">
+                                    <label for="choix8">8</label>
+                                </div>
+                            </div>
+                            <div class="filterbylocation">
+                                <p>Filtrer par location</p>
+                                <select name="country" id="select-country">
+                        <option value="">--Sélectionner un pays--</option>
+                        <option value="usa">États-Unis</option>
+                        <option value="uk">Royaume-Uni</option>
+                        <option value="germany">Allemagne</option>
+                        <option value="brazil">Brésil</option>
+                        <option value="australia">Australie</option>
+                        <option value="france">France</option>
+                        <option value="spain">Espagne</option>
+                        <option value="denmark">Danemark</option>
+                        <option value="canada">Canada</option>
+                        <option value="mexico">Méxique</option>
+                        <option value="netherlands">Pays-Bas</option>
+                        <option value="argentina">Argentine</option>
+                        <option value="chile">Chili</option>
+                        <option value="china">Chine</option>
+                        <option value="italy">Italie</option>
+                        <option value="new_zealand">Nouvelle-Zélande</option>
+                        <option value="sweden">Suède</option>
+                        <option value="switzerland">Suisse</option>
+                        <option value="austria">Autriche</option>
+                        <option value="belgium">Belgique</option>
+                        <option value="poland">Pologne</option>
+                        <option value="colombia">Colombie</option>
+                        <option value="hungary">Hongrie</option>
+                        <option value="india">Inde</option>
+                        <option value="japan">Japon</option>
+                        <option value="portugal">Portugal</option>
+                        <option value="united_arab_emirates">Émirats arabes unis</option>
+                        <option value="czechia">Tchéquie</option>
+                        <option value="finland">Finlande</option>
+                        <option value="indonesia">Indonésie</option>
+                        <option value="peru">Pérou</option>
+                        <option value="philippines">Philippines</option>
+                        <option value="belarus">Bélarus</option>
+                        <option value="french_polynesia">Polynésie française</option>
+                        <option value="greece">Grèce</option>
+                        <option value="ireland">Irlande</option>
+                        <option value="netherlands_antilles">Antilles néerlandaises</option>
+                        <option value="new_caledonia">Nouvelle-Calédonie</option>
+                        <option value="norway">Norvège</option>
+                        <option value="qatar">Qatar</option>
+                        <option value="romania">Roumanie</option>
+                        <option value="saudi_arabia">Arabie saoudite</option>
+                        <option value="slovakia">Slovaquie</option>
+                        <option value="south_korea">Corée du sud</option>
+                        <option value="taiwan">Taïwan</option>
+                        <option value="thailand">Thaïlande</option>
+                      </select>
+                            </div>
+                            <div class="filterbyfirstalbum">
+                                <p>Filtrer par date de sortie du premier album</p>
+                                <div class="col-xs-6">
+                                    <div class="range range-warning">
+                                        <input type="range" name="firstalbum" min="1962" max="2018" value="1962" onchange="rangeWarning.value=value">
+                                        <output id="rangeWarning">1963</output>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filterbycreationdate">
+                                <p>Filtrer par date de création du groupe</p>
+                                <div class="col-xs-6">
+                                    <div class="range range-info">
+                                        <input type="range" name="creationdate" min="1957" max="2015" value="1957" onchange="rangeInfo.value=value">
+                                        <output id="rangeInfo">1958</output>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="submit" value="Filter" class="filterbutton">
+                            <button href="/artistpage" class="filterbutton">Réinitialiser</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="artist">
+        {{range .}}
+        <div class="box">
+            <div id="barrehaut"></div>
+            <div id="name">
+                <p>{{.Name}}</p>
+            </div>
+            <div id="image">
+                <img src="{{.Image}}" href="" action="_blank" width="117%" height="70%">
+            </div>
+            <a class="infobutton" href="/artistpage/infos?id={{.Id}}">Plus d'infos</a>
+            <a class="roundbutton" href="#popup{{.Id}}">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256zM256 368C269.3 368 280 357.3 280 344V280H344C357.3 280 368 269.3 368 256C368 242.7 357.3 232 344 232H280V168C280 154.7 269.3 144 256 144C242.7 144 232 154.7 232 168V232H168C154.7 232 144 242.7 144 256C144 269.3 154.7 280 168 280H232V344C232 357.3 242.7 368 256 368z"/></svg>
+            </a>
+        </div>
+        <div id="popup{{.Id}}" class="overlay">
+            <div class="popup">
+                <div id="name2">
+                    <h2>{{.Name}}</h2>
+                </div>
+                <a class="close" href="artistpage">&times;</a>
+                <div class="content">
+                    <div id="image2">
+                        <img src="{{.Image}}">
+                    </div>
+                    <div id="text">
+                        <p>Le groupe <b>{{.Name}}</b> a été fondé en <b>{{.CreationDate}}</b> et son premier album est sorti le <b>{{.FirstAlbum}}</b>.</p>
+                    </div>
+                    <div id="members">
+                        <p>Le groupe est composé des artistes suivants:</p>
+                        {{range $key, $value := .Members}}
+                        <b>{{$value}} - </b> {{end}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{end}}
+    </div>
+</body>
