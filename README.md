@@ -1,20 +1,20 @@
 # Groupie_Tracker
 
-Dans le cadre de notre formation au sein du campus Ynov Lyon, nous avons développé un site web qui avait pour but de répertorier tout les données d'une API artiste.
+Dans le cadre de notre formation au sein du campus Ynov Lyon, nous avons développé un site web qui avait pour objectif de répertorier toutes les données d'une API contenant des informations sur différents artistes.
 
-#### API utilisé:
+#### API utilisée:
 https://groupietrackers.herokuapp.com/api/artists
 
-## Pour commencer
-N'hésitez pas a clone le projet.
+## Pour commencer:
+N'hésitez pas à clone le projet.
 
-## Pré-requis
+## Pré-requis:
 -Visual Studio Code \
 -Package Golang & Java Script \
 -Live Server 
 
-## Démarage
-Une fois les prérequis installer et le projet cloner: \
+## Démarage:
+Une fois les prérequis installés et le projet cloné: \
 -Lancer le serveur Golang\
 -Lancer Live Server
 
